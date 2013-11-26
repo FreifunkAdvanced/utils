@@ -17,7 +17,7 @@ delete_doc() {
 	fi
 }
 
-ids=$(curl "http://map.freifunk-rheinland.net/openwifimap/_design/oldnodes/_view/oldnodes.js" -H "Connection: close" -4 | grep id | cut -f4 -d'"' | sed 's/\r/ /')
+ids=$(curl "http://$map_server/openwifimap/_design/oldnodes/_view/oldnodes.js" -H "Connection: close" -4 | grep id | cut -f4 -d'"' | sed 's/\r/ /')
 
 for id in $(echo $ids)
 do
